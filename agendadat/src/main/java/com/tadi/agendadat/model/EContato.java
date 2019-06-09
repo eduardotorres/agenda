@@ -6,14 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Contato {
+public class EContato {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String site;
 	private String email;
-	private String telefone;
 	
 	public Long getId() {
 		return id;
@@ -21,23 +20,17 @@ public class Contato {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+	public String getSite() {
+		return site;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setSite(String site) {
+		this.site = site;
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 	@Override
 	public int hashCode() {
@@ -54,7 +47,7 @@ public class Contato {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Contato other = (Contato) obj;
+		EContato other = (EContato) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
